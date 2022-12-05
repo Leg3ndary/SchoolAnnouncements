@@ -11,3 +11,9 @@ Starting the project, I will be aiming to project announcements from our schools
 ```md
 1. Finished client, can now save data to a json doc, and return all of it's data
 ```
+
+## Day 2 - December 4th 2022
+
+```md
+1. Worked on parsing data, it's a pain, no commits for today :(
+```
