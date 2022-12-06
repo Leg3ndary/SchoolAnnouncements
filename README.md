@@ -17,3 +17,9 @@ Starting the project, I will be aiming to project announcements from our schools
 ```md
 1. Worked on parsing data, it's a pain, no commits for today :(
 ```
+
+## Day 3 - December 5th, 2022
+
+```md
+1. Finished parsing the data, data is now usable to an extent
+```
