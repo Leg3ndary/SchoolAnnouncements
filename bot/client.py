@@ -26,6 +26,8 @@ class Wrapper:
             self.config = json.loads(credentials.read())
 
         self.DOCUMENT_ID = self.config.get("Google").get("DOCID")
+        self.latest: Dict[str, str] = None
+        self.choices: List[str] = None
 
     async def get_credentials(self) -> dict:
         """
@@ -116,17 +118,8 @@ class Wrapper:
 
     async def read_strucutural_elements(self, elements: Dict) -> str:
         """
-        Recurses through a list of Structural Elements to read a document's text where text may be
-        in nested elements.
-
-        Parameters
-        ----------
-        elements: list
-            a list of Structural Elements.
-
-        Returns
-        -------
-        Not sure
+        Recurses through a list of Structural Elements to read a document's text and return it
+        instead of messy json.
         """
         text = ""
         flag = False
@@ -151,7 +144,9 @@ class Wrapper:
 
         return text
 
-    async def organize_doc(self, text: str, save: bool = False) -> Dict[str, Union[str, dict]]:
+    async def organize_doc(
+        self, text: str, save: bool = False
+    ) -> Dict[str, Union[str, dict]]:
         """
         Organize the text into a nice dict for us to use
         """
@@ -201,3 +196,24 @@ class Wrapper:
         if save:
             with open("data/announcements.json", "w", encoding="utf8") as announcements:
                 json.dump(full, announcements, indent=4)
+
+    async def update_latest(self) -> None:
+        """
+        Update latest announcements
+        """
+        with open("data/announcements.json", "r", encoding="utf8") as announcements:
+            self.latest = json.loads(announcements.read())
+            self.choices = self.latest.keys()
+
+    async def get_latest(self) -> Dict[str, str]:
+        """
+        Get todays date
+        """
+        if datetime.datetime.now().weekday() in (5, 6):
+            altered = datetime.datetime.now() - datetime.timedelta(
+                days=1 if datetime.datetime.now().weekday() == 5 else 2
+            )
+            day = altered.strftime("%A %B %d")
+        else:
+            day = datetime.datetime.now().strftime("%A %B %d")
+        return self.latest.get(day, {"No Announcements": "No Announcements"})
