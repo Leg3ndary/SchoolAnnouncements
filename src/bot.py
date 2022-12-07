@@ -90,6 +90,7 @@ async def update_announcements() -> None:
     if datetime.datetime.now().weekday() in (5, 6):
         return
     await announcements.save_doc()
+    await asyncio.sleep(3)
     await announcements.update_latest()
     print(f"{Fore.CYAN}Updated latest announcements{Style.RESET_ALL}")
 
@@ -125,8 +126,6 @@ async def on_ready() -> None:
     print(f"{Fore.CYAN}Bot {bot.user} has logged on.{Style.RESET_ALL}")
 
     await announcements.save_doc()
-    # Sometimes it doesn't finish updating and displays old stuff so I we add a short delay even though it's awaited before
-    await asyncio.sleep(5)
     await announcements.update_latest()
     print(f"{Fore.GREEN}Finished Saving and Updating Data.{Style.RESET_ALL}")
     update_announcements.start()
