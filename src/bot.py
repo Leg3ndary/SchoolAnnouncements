@@ -30,6 +30,7 @@ async def announcements_today_cmd(interaction: discord.Interaction) -> None:
     """
     Show the latest announcements
     """
+    await interaction.response.defer()
     latest = await announcements.get_latest()
 
     announcement_date = datetime.datetime.fromtimestamp(latest.get("timestamp"))
