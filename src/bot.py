@@ -83,14 +83,13 @@ async def announcements_on_cmd(interaction: discord.Interaction, day: str) -> No
 
 
 @tasks.loop(
-    time=datetime.time(hour=16, minute=18, second=30)
+    time=datetime.time(hour=16, minute=32, second=0)
 )  # This is the equivalent of 8:55am EST
 # time=datetime.time(hour=13, minute=55, second=0)
 async def update_announcements() -> None:
     """
     Update our announcements documents every day at 8:55am EST
     """
-    print(f"{Fore.MAGENTA}Sending announcement.{Style.RESET_ALL}")
     # if datetime.datetime.now().weekday() in (5, 6):
         # return
     await announcements.save_doc()
@@ -101,6 +100,7 @@ async def update_announcements() -> None:
     webhook = discord.Webhook.from_url(
         url=bot.config.get("Bot").get("AnnouncementsWebhook"), session=bot.session
     )
+    print(f"{Fore.MAGENTA}Sending announcement.{Style.RESET_ALL}")
 
     latest = await announcements.get_latest()
 
