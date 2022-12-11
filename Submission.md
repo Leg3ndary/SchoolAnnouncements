@@ -4,6 +4,8 @@ A project by _Leg3ndary AKA Ben
 
 All of these topics are addressed in my video! I would recommend watching it for the most info about my project!
 
+[Link](https://youtu.be/aXBSoJvAkOc)
+
 ## Section 1 - What???
 
 Everyone who's gone to school knows every morning, you'll have some sort of announcements. "Chess club is on Thursday at 2pm in room 201, join us for some fun! If you would like to join the football team, come to room 123 for so and so important meeting." However, I always somehow seem to miss it, whether this be because I'm too engrossed in my studies (totally), or because my class is just too loud, this is something you probably don't want to miss. Of course, most schools might have this on some bulletin board, or on some website, but who wants to take the time to go read that? In the end, announcements are really just a way to communicate news or information to a wide variety of students, however, I believe the way that it's currently done is outdated, and quite frankly useless. This pushed me to create and propose this new idea, that doesn't disrupt the old way of using the PA system, and just pushes that information quickly and easily to students. Effectively making communication between the school and students, much, much better.
