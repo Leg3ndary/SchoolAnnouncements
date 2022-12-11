@@ -9,10 +9,11 @@ from typing import List
 
 import aiohttp
 import discord
-from client import Wrapper
-from aphs_client import APHSClient
 from colorama import Fore, Style
 from discord.ext import commands, tasks
+
+from aphs_client import APHSClient
+from client import Wrapper
 
 with open("credentials/config.json", "r", encoding="utf8") as credentials:
     config = json.loads(credentials.read())
@@ -82,14 +83,16 @@ async def announcements_on_cmd(interaction: discord.Interaction, day: str) -> No
 
 
 @tasks.loop(
-    time=datetime.time(hour=13, minute=55, second=0)
+    time=datetime.time(hour=16, minute=18, second=30)
 )  # This is the equivalent of 8:55am EST
+# time=datetime.time(hour=13, minute=55, second=0)
 async def update_announcements() -> None:
     """
     Update our announcements documents every day at 8:55am EST
     """
-    if datetime.datetime.now().weekday() in (5, 6):
-        return
+    print(f"{Fore.MAGENTA}Sending announcement.{Style.RESET_ALL}")
+    # if datetime.datetime.now().weekday() in (5, 6):
+        # return
     await announcements.save_doc()
     await asyncio.sleep(3)
     await announcements.update_latest()

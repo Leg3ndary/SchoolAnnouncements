@@ -28,5 +28,5 @@ class APHSClient(discord.Client):
         On setup sync commands
         """
         print(f"{Fore.YELLOW}Syncing commands up with discord...{Style.RESET_ALL}")
-        await self.tree.sync()
+        # await self.tree.sync()
         print(f"{Fore.GREEN}Done{Style.RESET_ALL}")
