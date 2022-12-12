@@ -1,10 +1,8 @@
 # School Announcements
 
-A project by _Leg3ndary AKA Ben
+A project by Leg3ndary AKA Ben
 
-All of these topics are addressed in my video! I would recommend watching it for the most info about my project!
-
-[Link](https://youtu.be/aXBSoJvAkOc)
+All of these topics are addressed in my video! I would recommend [watching](https://youtu.be/aXBSoJvAkOc) it for the most info about my project!
 
 ## Section 1 - What???
 
@@ -22,10 +20,22 @@ Interestingly enough, our school has a discord server dedicated for anything sch
 
 ## Section 4 - Further information: Complexity (only for hackathon participants)
 
-I used many technologies! These included discord.py, google sheets api, a bit of regex, along with vscode for my ide. I go much more into detail in my video as there are a few main parts to my presentation!
+I used many technologies! These included discord.py, google docs api, a bit of regex, along with vscode for my ide. I go much more into detail in my video as there are a few main parts to my presentation!
+
+However, if you still want a short explanation, I used google docs to pull the entire docs elements into json, I then parsed and formatted that into both a markdown file to view the information visually, and json. Through this process I also parsed out club names, announcements, as well as times/dates to add timestamps to each announcements. I then used a popular library known as [discord.py](https://github.com/Rapptz/discord.py) to create a bot and connect to the discord api, along with this I made an automatic "task" that would send the information directly to a webhook. I also made a command that used discord's slash command and autocomplete to make an announcement searching function. My final product was a discord bot that would not only send announcements quickly and easily, it would also let you view past announcements which were also organized.
 
 One thing to note, at around 7:30 in my video, when I was talking about how the announcement date would be formatted differently, I meant sometimes it would be like 7 Dec 2022, instead of 7 December 2022, which was pretty annoying, but it worked out...
 
-## Section 5 - Conclusion: Future plans
+## Section 5 - Further information: Presentation (only for hackathon participants)
+
+I don't have any more information I'd like to share about my project other than it was fun to create :).
+
+## Section 6 - Further information: Anything else you want to mention (only for hackathon participants)
+
+This bot is not publicly available, unfortunately I only want it running in 2 servers, my school server and my development server. Sorry!
+
+## Section 7 - Conclusion: Future plans
 
 I will be releasing this project later today! Future plans may include things like school related links, or just to fix that one command T-T. Good luck all other hackathon participants!
+
+I think this project is a perfect submission for this hackathon because not only does it address it's theme well, it shows how your project can be used in real life, and help out real people.
