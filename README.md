@@ -35,3 +35,9 @@ Starting the project, I will be aiming to project announcements from our schools
     - Made a command to index/search announcements using discord's nice slash command autocompletes
     - Made a task to automatically update and send a webhook some data to send the updates, hope it works tomorrow!
 ```
+
+## Day 5-7 - December 7th, 2022
+
+I spent these days polishing up my written and recorded submission, the bot is basically done, and will be pushed to prod.
+
+This project uses discord.py v2.1.0, the google docs api, and a few other libraries here and there, these are listed in `requirements.txt`. I used python version 3.9.10 to run this bot.
